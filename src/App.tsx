@@ -1,12 +1,10 @@
 import { Footer } from './components/layout/Footer'
 import { Nav } from './components/layout/Nav'
 import { About } from './sections/About'
+import { BroadcastDesign } from './sections/BroadcastDesign'
 import { Contact } from './sections/Contact'
-import { FeaturedBroadcast } from './sections/FeaturedBroadcast'
 import { Hero } from './sections/Hero'
-import { SelectedWork } from './sections/SelectedWork'
-import { Showreel } from './sections/Showreel'
-import { VerticalShowcase } from './sections/VerticalShowcase'
+import { WorkSection } from './sections/WorkSection'
 
 export default function App() {
   return (
@@ -17,10 +15,9 @@ export default function App() {
       <Nav />
       <main id="main">
         <Hero />
-        <Showreel />
-        <FeaturedBroadcast />
-        <SelectedWork />
-        <VerticalShowcase />
+        <BroadcastDesign />
+        <WorkSection id="social" index="02" category="social" title={['Social', 'Content']} />
+        <WorkSection id="film" index="03" category="film" title={['Film', '& Editing']} />
         <About />
         <Contact />
       </main>

@@ -13,7 +13,7 @@ export function About() {
   return (
     <section ref={root} id="about" className={s.section} aria-labelledby="about-title">
       <div className="container">
-        <SectionHeader id="about-title" index="05" kicker="About" title={['About']} />
+        <SectionHeader id="about-title" index="04" kicker="About" title={['About']} />
 
         <div className={s.layout}>
           <div className={s.portrait} data-reveal>

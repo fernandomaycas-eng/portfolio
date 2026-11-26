@@ -24,3 +24,7 @@
   color: var(--volt);
   border-color: rgb(197 255 0 / 0.4);
 }
+
+.tag[data-status='client'] {
+  color: var(--text);
+}

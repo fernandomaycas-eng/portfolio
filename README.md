@@ -1,10 +1,10 @@
 # Fernando Maycas — Portfolio
 
-Sports broadcast design, motion graphics, sports social content and audiovisual production.
+Sports broadcast design, sports social content and filmmaking & editing.
 
 Homepage prototype built with **React + Vite + TypeScript**, lean CSS Modules and **GSAP** (ScrollTrigger) for motion.
 
-> **Status:** prototype. Every project, frame and contact detail on the site is a clearly labelled **placeholder** until real work and publication rights are confirmed. Nothing is deployed yet.
+> **Status:** prototype. Project names are real, but all media, descriptions and credits are clearly labelled **placeholders** until assets and details are supplied. Nothing is deployed yet.
 
 ---
 
@@ -30,15 +30,15 @@ The site is configured for GitHub Pages at `/portfolio/` (`base` in `vite.config
 src/
   data/                 ← all editable content lives here
     types.ts            content model (Project, MediaAsset, AspectRatio…)
-    projects.ts         showreel, featured broadcast package, selected work, vertical campaigns
-    categories.ts       the four disciplines and their sub-categories
+    projects.ts         every project, grouped by category
+    categories.ts       the three disciplines and their sub-categories
     site.ts             name, hero lines, about copy, contact links, nav
   components/
     media/              MediaFrame (native-ratio video/image) + Placeholder
-    project/            ProjectCard
+    project/            ProjectCard, ProjectGrid
     ui/                 SectionHeader, StatusTag, WipeReveal
     layout/             Nav, Footer
-  sections/             one file per homepage section, in page order
+  sections/             Hero, BroadcastDesign, WorkSection (social + film), About, Contact
   lib/                  gsap setup, scroll reveal hook, media helpers
   styles/global.css     design tokens, reset, utilities
 public/
@@ -47,14 +47,15 @@ public/
 
 ### Homepage sections
 
-1. Navigation (minimal; full-screen menu on mobile)
-2. Typographic hero — *Sports. Motion. Broadcast.* with discipline ticker
-3. Showreel (16:9, scroll-expanding frame, running timecode)
-4. Featured broadcast package (16:9 opener beside a 9:16 cut-down, deliverables, system components)
-5. Selected work (filterable by category)
-6. Vertical sports content (9:16 campaign rails)
-7. About
-8. Contact
+- Navigation: Broadcast · Social · Film · About · Contact (full-screen menu on mobile)
+- Typographic hero — *Sports. Motion. Broadcast.* with discipline ticker
+- **01 Broadcast Design** — featured LaLiga Broadcast Package (opener, deliverables, four system components), then Premier League Broadcast Package and Brazil — Opening Sequence
+- **02 Sports Social Content** — three story projects
+- **03 Filmmaking & Editing** — one project (placeholder)
+- **04 About**
+- **05 Contact**, footer
+
+Project grids adapt automatically: one project spans full width, two sit in a staggered pair, three or more form a row.
 
 ---
 
@@ -70,9 +71,11 @@ Never commit masters or project files (`.mov`, `.prproj`, `.aep`, `.hip`, `.psd`
 | 9:16 | 1080×1920 H.264 MP4 | 1080×1920 JPG/WebP |
 | 4:5 / 1:1 | 1080×1350 / 1080×1080 | same size |
 
-Keep looping previews short (6–15 s) and small (ideally < 8 MB). For the full showreel with sound, consider hosting on Vimeo/YouTube or a CDN and pointing `src` at the absolute URL.
+Keep looping previews short (6–15 s) and small (ideally < 8 MB). For long films with sound, consider hosting on Vimeo/YouTube or a CDN and pointing `src` at the absolute URL.
 
-Place files under `public/media/`, e.g. `public/media/showreel/showreel-2026.mp4`.
+Place files under `public/media/`, e.g. `public/media/brazil-opening-sequence/cover.mp4`.
+
+Social story assets: set each frame's `aspect` to the real export (e.g. `'9:16'` or `'4:5'`). The frame and grid adapt to it — nothing is forced into a fixed ratio.
 
 ### 2. Point the data at the files
 
@@ -92,15 +95,15 @@ As soon as `src` is set, the placeholder frame is replaced by the real media at 
 
 ### 3. Set the project status
 
-- `placeholder` — no real asset yet (labelled **Placeholder**)
-- `concept` — self-initiated/speculative work (labelled **Concept**)
-- `published` — real work with publication rights confirmed (no label)
+- `client` — commissioned work with publication rights confirmed (labelled **Client project**)
+- `concept` — self-initiated, not commissioned (labelled **Concept**)
+- `placeholder` — details not provided yet (labelled **Placeholder**)
 
-Only fill `client`, `year`, `role` and `tools` with verified information.
+LaLiga and Premier League packages are set to `concept`; change them to `client` only if they were commissioned. Only fill `client`, `year`, `role` and `tools` with verified information.
 
 ### 4. Add a new project
 
-Append an object to `projects` in `src/data/projects.ts` with `selected: true` to show it in *Selected work*. Vertical campaigns go in `verticalCampaigns`. No component changes are needed.
+Append an object to `projects` in `src/data/projects.ts` with the right `category` (`broadcast`, `social` or `film`). It appears in that section automatically. In Broadcast Design, the project with `featured: true` gets the full package layout (deliverables and component frames). No component changes are needed.
 
 ### Contact details
 
@@ -112,5 +115,5 @@ Append an object to `projects` in `src/data/projects.ts` with `selected: true` t
 
 - Palette: carbon `#0C0C0C`, off-white `#F2F2ED`, graphite `#282828`, volt `#C5FF00`.
 - Type: Barlow Condensed (display) + Inter Tight (text), self-hosted via Fontsource.
-- Motion: masked line reveals, a volt "replay wipe" on media, scroll-driven showreel frame. All non-essential motion is gated behind `prefers-reduced-motion: no-preference`.
+- Motion: masked line reveals, a volt wipe reveal on media, hover previews in project grids. All non-essential motion is gated behind `prefers-reduced-motion: no-preference`.
 - Placeholders draw broadcast action/title-safe guides so compositions can be judged at true delivery ratio.

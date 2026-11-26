@@ -14,10 +14,10 @@ export const site = {
   role: 'Sports Broadcast Design & Motion',
   heroLines: ['Sports.', 'Motion.', 'Broadcast.'],
   intro:
-    'Independent creative designing sports broadcast systems, motion graphics, social content and film.',
+    'Independent creative designing sports broadcast systems, social content and film.',
   about: [
     'Fernando Maycas is an independent creative working across sports broadcast design, motion graphics, sports social content and audiovisual production.',
-    'The focus is complete visual systems — openers, scoreboards, player cards, lineups, lower thirds and matchday content that hold together from the broadcast to the phone screen.',
+    'The focus is complete visual systems — openers, scoreboards, player cards, lineups, lower thirds and matchday content that hold together from the broadcast to social.',
   ],
   /** Placeholder until a public contact address is chosen. */
   email: null as string | null,
@@ -29,8 +29,9 @@ export const site = {
 }
 
 export const nav = [
-  { label: 'Work', href: '#work' },
-  { label: 'Vertical', href: '#vertical' },
+  { label: 'Broadcast', href: '#broadcast' },
+  { label: 'Social', href: '#social' },
+  { label: 'Film', href: '#film' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]

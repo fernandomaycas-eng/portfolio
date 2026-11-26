@@ -73,9 +73,9 @@ export function Hero() {
         <p className={s.intro} data-hero-fade>
           <strong>{site.name}</strong> — {site.intro}
         </p>
-        <a href="#showreel" className={`eyebrow ${s.cue}`} data-hero-fade>
+        <a href="#broadcast" className={`eyebrow ${s.cue}`} data-hero-fade>
           <span className={s.cueLine} aria-hidden="true" />
-          Watch the reel
+          See the work
         </a>
       </div>
 

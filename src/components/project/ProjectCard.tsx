@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { categoryById } from '../../data/categories'
 import type { Project } from '../../data/types'
 import { MediaFrame } from '../media/MediaFrame'
 import { StatusTag } from '../ui/StatusTag'
@@ -15,7 +14,6 @@ interface ProjectCardProps {
 export function ProjectCard({ project, index, href }: ProjectCardProps) {
   const [active, setActive] = useState(false)
   const number = String(index + 1).padStart(2, '0')
-  const category = categoryById[project.category]
 
   const body = (
     <>
@@ -28,10 +26,7 @@ export function ProjectCard({ project, index, href }: ProjectCardProps) {
         </span>
         <div className={s.text}>
           <h3 className={`display ${s.title}`}>{project.title}</h3>
-          <p className={s.sub}>
-            <span>{category.name}</span>
-            {project.tags.length > 0 && <span className={s.tags}> — {project.tags.join(', ')}</span>}
-          </p>
+          {project.tags.length > 0 && <p className={s.sub}>{project.tags.join(' · ')}</p>}
         </div>
         <StatusTag status={project.status} />
       </div>

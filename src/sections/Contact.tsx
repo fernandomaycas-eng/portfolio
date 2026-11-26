@@ -11,7 +11,7 @@ export function Contact() {
     <section ref={root} id="contact" className={s.section} aria-labelledby="contact-title">
       <div className="container">
         <p className={`eyebrow ${s.kicker}`} data-reveal>
-          <span className={s.num}>06</span> — Contact
+          <span className={s.num}>05</span> — Contact
         </p>
 
         <h2 id="contact-title" className={`display ${s.title}`}>

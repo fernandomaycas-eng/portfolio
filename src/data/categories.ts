@@ -13,17 +13,15 @@ export const categories: Category[] = [
       'Lineups',
       'Scoreboards',
       'Lower thirds',
-      'Replay transitions',
     ],
   },
   {
     id: 'social',
     name: 'Sports Social Content',
     shortName: 'Social',
-    description: 'Native vertical and feed content built for matchday pace.',
+    description: 'Story-driven social content built for matchday pace.',
     disciplines: [
       'Instagram Stories',
-      'Vertical reels',
       'Matchday graphics',
       'Player announcements',
       'Sports campaigns',
@@ -36,13 +34,6 @@ export const categories: Category[] = [
     shortName: 'Film',
     description: 'Story-led edits from the stands, the pitch and behind the scenes.',
     disciplines: ['Sports aftermovies', 'Event coverage', 'Promotional videos', 'Branded content'],
-  },
-  {
-    id: 'cgi',
-    name: '3D & CGI',
-    shortName: '3D',
-    description: 'Three-dimensional motion, product work and procedural effects.',
-    disciplines: ['3D motion graphics', 'Product animation', 'Houdini FX', 'Procedural animation'],
   },
 ]
 

@@ -1,19 +1,17 @@
 import type { ProjectStatus } from '../../data/types'
 import s from './StatusTag.module.css'
 
-const LABEL: Record<ProjectStatus, string | null> = {
-  placeholder: 'Placeholder',
+const LABEL: Record<ProjectStatus, string> = {
+  client: 'Client project',
   concept: 'Concept',
-  published: null,
+  placeholder: 'Placeholder',
 }
 
-/** Labels placeholder and conceptual work so it is never mistaken for commissioned work. */
+/** States what kind of work a project is, so concepts and placeholders are never mistaken for commissions. */
 export function StatusTag({ status }: { status: ProjectStatus }) {
-  const label = LABEL[status]
-  if (!label) return null
   return (
     <span className={s.tag} data-status={status}>
-      {label}
+      {LABEL[status]}
     </span>
   )
 }

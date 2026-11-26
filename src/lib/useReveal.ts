@@ -7,7 +7,7 @@ import { gsap, MOTION_OK, useGSAP } from './gsap'
  * - `[data-reveal]`        fades + rises in. Siblings sharing a parent stagger.
  * - `[data-reveal="line"]` slides up from inside a `.line-mask` parent.
  * - `[data-wipe]`          a volt bar wipes across, then uncovers the content
- *                          (the broadcast "replay transition" motif). Requires
+ *                          (a broadcast-style wipe). Requires
  *                          `[data-wipe-bar]` and `[data-wipe-content]` children,
  *                          see <WipeReveal>.
  *

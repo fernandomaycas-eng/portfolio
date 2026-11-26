@@ -1,17 +1,26 @@
+/* First section after the hero: a shorter lead-in than the standard section gap. */
 .section {
-  padding-top: var(--section-y);
+  padding-top: clamp(4rem, 9vw, 8rem);
 }
 
-/*
- * 16:9 cover beside a 9:16 cut-down at identical height.
- * Height of a 16:9 frame of width w is w·9/16; a 9:16 frame of that height
- * has width w·(9/16)² = 0.31640625w — hence the column ratio.
- */
-.lead {
-  display: grid;
-  grid-template-columns: 1fr 0.31640625fr;
-  gap: clamp(0.5rem, 1.2vw, 1rem);
-  align-items: start;
+.projectBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--volt);
+}
+
+.projectTitle {
+  font-size: clamp(1.9rem, 3.6vw, 3.25rem);
+  line-height: 0.95;
 }
 
 .sheet {
@@ -93,15 +102,13 @@
   color: var(--volt);
 }
 
-@media (max-width: 699px) {
-  .components > li:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-  }
+.more {
+  margin-top: clamp(4rem, 9vw, 8rem);
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .components {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -109,11 +116,5 @@
   .sheet {
     grid-template-columns: 1.3fr 1fr 1fr;
     gap: 3rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .components {
-    grid-template-columns: repeat(5, 1fr);
   }
 }
