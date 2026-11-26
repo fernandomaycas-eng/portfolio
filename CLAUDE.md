@@ -15,7 +15,7 @@ Work categories (three only): Broadcast Design, Sports Social Content, Filmmakin
 - **Sports Social Content** — three sports social media story projects (details to come). No "Built for Vertical" section and no vertical reels. Do not force 9:16 layouts; adapt presentation to the real assets once supplied (set each asset's `aspect`).
 - **Filmmaking & Editing** — one project, shown as a clearly labelled placeholder until final details are provided.
 
-Project labels: `client` (commissioned, rights confirmed), `concept` (not commissioned), `placeholder` (details pending). LaLiga and Premier League packages are labelled Concept unless confirmed as commissioned. Fill client, year, role and tools only with verified information. Never invent client claims or represent stock imagery as original work.
+Project labels: `client` (commissioned, rights confirmed), `concept` (not commissioned), `placeholder` (details pending). LaLiga and Premier League packages are concept work (confirmed: not commissioned) and must stay labelled Concept. Fill client, year, role and tools only with verified information. Never invent client claims or represent stock imagery as original work.
 
 Allow mixed aspect ratios in project data and case studies. Reusable case studies: title, role, video, stills, breakdown, deliverables and tools. Other candidate projects (not on the homepage yet): Matchday System, Copa UNIDAVI, Playtomic, WIMU; verify details and publication rights first.
 

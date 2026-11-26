@@ -25,7 +25,7 @@ export const projects: Project[] = [
     slug: 'laliga-broadcast-package',
     title: 'LaLiga Broadcast Package',
     category: 'broadcast',
-    // Not commissioned by LaLiga. Change to 'client' only if it was.
+    // Confirmed concept work — not commissioned by LaLiga.
     status: 'concept',
     featured: true,
     tags: ['Broadcast package', 'Graphics system'],
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     slug: 'premier-league-broadcast-package',
     title: 'Premier League Broadcast Package',
     category: 'broadcast',
-    // Not commissioned by the Premier League. Change to 'client' only if it was.
+    // Confirmed concept work — not commissioned by the Premier League.
     status: 'concept',
     tags: ['Broadcast package', 'Graphics system'],
     summary: SUMMARY_TBC,

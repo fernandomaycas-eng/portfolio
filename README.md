@@ -99,7 +99,7 @@ As soon as `src` is set, the placeholder frame is replaced by the real media at 
 - `concept` — self-initiated, not commissioned (labelled **Concept**)
 - `placeholder` — details not provided yet (labelled **Placeholder**)
 
-LaLiga and Premier League packages are set to `concept`; change them to `client` only if they were commissioned. Only fill `client`, `year`, `role` and `tools` with verified information.
+LaLiga and Premier League packages are confirmed concept work and stay `concept`. Only fill `client`, `year`, `role` and `tools` with verified information.
 
 ### 4. Add a new project
 
