@@ -1,0 +1,84 @@
+.section {
+  padding-block: var(--section-y) clamp(3rem, 6vw, 5rem);
+}
+
+.kicker {
+  margin-bottom: 1.5rem;
+}
+
+.num {
+  color: var(--volt);
+}
+
+.title {
+  font-size: clamp(6rem, 30vw, 30rem);
+  line-height: 0.78;
+}
+
+.dot {
+  color: var(--volt);
+}
+
+.grid {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: clamp(2.5rem, 6vw, 5rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.pitch {
+  max-width: 34ch;
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+  line-height: 1.4;
+}
+
+.email {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  text-transform: uppercase;
+  line-height: 1;
+  border-bottom: 2px solid var(--volt);
+  padding-bottom: 0.2rem;
+}
+
+.tbc {
+  color: var(--text-faint);
+  border-bottom-style: dashed;
+  border-bottom-color: var(--line-strong);
+}
+
+.links {
+  margin-top: 0.6rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.link {
+  font-weight: 600;
+  transition: color 0.25s;
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--volt);
+}
+
+.tbcLink {
+  color: var(--text-mute);
+}
+
+.tbcNote {
+  color: var(--text-faint);
+  font-size: 0.85em;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1.4fr 1fr 0.8fr;
+    gap: 3rem;
+  }
+}

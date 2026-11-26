@@ -1,0 +1,196 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  padding-top: calc(var(--nav-h) + clamp(1rem, 3vw, 2.5rem));
+  overflow: hidden;
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+
+.index {
+  display: grid;
+  gap: 0.35rem;
+  text-align: right;
+}
+
+.indexNum {
+  color: var(--volt);
+  margin-right: 0.4em;
+}
+
+.title {
+  align-self: end;
+  display: grid;
+  /*
+   * "BROADCAST." is the longest line: 20.6vw makes it span the viewport.
+   * Capped by viewport height so the whole hero (and ticker) fits above the fold.
+   */
+  font-size: clamp(4.25rem, min(20.6vw, 21svh), 24rem);
+  line-height: 0.8;
+  padding-inline: calc(var(--gutter) - 0.04em);
+  padding-block: clamp(1.25rem, 4vh, 3rem) clamp(1rem, 3vh, 2.5rem);
+  max-width: calc(var(--max) * 1.35);
+  margin-inline: auto;
+  width: 100%;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.row {
+  display: block;
+}
+
+/* Staggered editorial alignment: left, indented, right. */
+.row[data-row='1'] {
+  padding-left: 0.62em;
+}
+
+.row[data-row='2'] {
+  justify-self: end;
+}
+
+.dot {
+  display: inline-block;
+  color: var(--volt);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  padding-bottom: clamp(1.5rem, 4vh, 2.75rem);
+}
+
+.intro {
+  max-width: 40ch;
+  font-size: clamp(1rem, 0.9rem + 0.45vw, 1.3rem);
+  line-height: 1.4;
+  color: var(--text-mute);
+  text-wrap: pretty;
+}
+
+.intro strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: var(--text);
+  transition: color 0.25s;
+}
+
+.cueLine {
+  position: relative;
+  width: 3.5rem;
+  height: 1px;
+  background: var(--line-strong);
+  overflow: hidden;
+}
+
+.cueLine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--volt);
+  animation: cue 2.4s var(--ease-in-out) infinite;
+}
+
+@keyframes cue {
+  0% {
+    transform: translateX(-100%);
+  }
+  60%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.cue:hover,
+.cue:focus-visible {
+  color: var(--volt);
+}
+
+/* Broadcast ticker */
+.tickerWrap {
+  overflow: hidden;
+}
+
+.ticker {
+  background: var(--volt);
+  color: var(--carbon);
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: ticker 60s linear infinite;
+}
+
+.group {
+  display: flex;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.3vw, 1.2rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding-block: 0.7rem;
+  white-space: nowrap;
+}
+
+.sep {
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-inline: 1.4rem;
+  background: var(--carbon);
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track,
+  .cueLine::after {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .top {
+    flex-direction: column;
+  }
+
+  .index {
+    text-align: left;
+    margin-top: 1rem;
+  }
+
+  .index li {
+    font-size: 0.68rem;
+  }
+
+  .row[data-row='1'] {
+    padding-left: 0.35em;
+  }
+}

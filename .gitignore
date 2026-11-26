@@ -1,0 +1,43 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencies and build output
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+
+# Environment and credentials
+.env
+.env.*
+!.env.example
+
+# Original / master media and project files must never be committed.
+# Only web-optimised exports (mp4/webm/jpg/webp/avif) belong in public/media.
+*.mov
+*.mxf
+*.prores
+*.braw
+*.r3d
+*.wav
+*.aif
+*.aiff
+*.psd
+*.aep
+*.aepx
+*.prproj
+*.drp
+*.hip
+*.hiplc
+*.hipnc
+*.blend
+*.c4d

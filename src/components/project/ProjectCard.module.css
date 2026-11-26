@@ -1,0 +1,76 @@
+.card {
+  position: relative;
+}
+
+.link {
+  display: block;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+}
+
+.media > * {
+  transition: transform 0.9s var(--ease-out);
+}
+
+/* Volt underline that draws in on hover — a lower-third accent. */
+.media::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--volt);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease-out);
+  z-index: 2;
+}
+
+.card:hover .media > *,
+.card:focus-within .media > * {
+  transform: scale(1.025);
+}
+
+.card:hover .media::after,
+.card:focus-within .media::after {
+  transform: scaleX(1);
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  margin-top: 1rem;
+}
+
+.number {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  color: var(--text-faint);
+  transition: color 0.3s;
+}
+
+.card:hover .number,
+.card:focus-within .number {
+  color: var(--volt);
+}
+
+.title {
+  font-size: clamp(1.6rem, 2.6vw, 2.5rem);
+  line-height: 0.95;
+}
+
+.sub {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-mute);
+}

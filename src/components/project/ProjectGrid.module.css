@@ -1,0 +1,23 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 2.5vw, 2rem);
+}
+
+@media (min-width: 900px) {
+  .grid[data-layout='staggered'] {
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: clamp(3rem, 8vw, 8rem);
+  }
+
+  /* Editorial rhythm: the second column sits lower than the first.
+     `top` rather than `translate`: GSAP owns the transform stack on cards. */
+  .grid[data-layout='staggered'] > :nth-child(even) {
+    position: relative;
+    top: clamp(3rem, 8vw, 8rem);
+  }
+
+  .grid[data-layout='row'] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
