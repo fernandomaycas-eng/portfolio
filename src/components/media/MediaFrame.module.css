@@ -1,0 +1,16 @@
+.frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--carbon-2);
+  isolation: isolate;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* Asset already matches the frame ratio; `cover` only absorbs rounding. */
+  object-fit: cover;
+}

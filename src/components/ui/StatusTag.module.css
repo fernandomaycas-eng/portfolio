@@ -1,0 +1,26 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.35em 0.6em 0.3em;
+  border: 1px solid var(--line-strong);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--text-mute);
+  white-space: nowrap;
+}
+
+.tag::before {
+  content: '';
+  width: 0.45em;
+  height: 0.45em;
+  background: currentColor;
+}
+
+.tag[data-status='placeholder'] {
+  color: var(--volt);
+  border-color: rgb(197 255 0 / 0.4);
+}

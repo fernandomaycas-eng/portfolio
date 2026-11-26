@@ -1,0 +1,119 @@
+.section {
+  padding-top: var(--section-y);
+}
+
+/*
+ * 16:9 cover beside a 9:16 cut-down at identical height.
+ * Height of a 16:9 frame of width w is w·9/16; a 9:16 frame of that height
+ * has width w·(9/16)² = 0.31640625w — hence the column ratio.
+ */
+.lead {
+  display: grid;
+  grid-template-columns: 1fr 0.31640625fr;
+  gap: clamp(0.5rem, 1.2vw, 1rem);
+  align-items: start;
+}
+
+.sheet {
+  display: grid;
+  gap: 2.5rem;
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.summary {
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem);
+  line-height: 1.4;
+  max-width: 38ch;
+  text-wrap: pretty;
+}
+
+.deliverables {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.deliverables li {
+  display: flex;
+  gap: 0.9rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.dNum {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--volt);
+  padding-top: 0.35rem;
+}
+
+.specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1.5rem;
+  align-content: start;
+}
+
+.spec dd {
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.spec dd[data-tbc='true'] {
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+.components {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem) clamp(0.5rem, 1.2vw, 1rem);
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.caption {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.capNum {
+  color: var(--volt);
+}
+
+@media (max-width: 699px) {
+  .components > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 700px) {
+  .components {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .sheet {
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .components {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
